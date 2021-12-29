@@ -31,3 +31,17 @@ $ grpcurl -plaintext -d '{"name":"11"}' localhost:8001 proto.TagService.GetTagLi
   }
 }
 ```
+
+# cmd/362 http and gRPC
+```
+$ grpcurl -plaintext localhost:8001 proto.TagService.GetTagList
+
+$ curl http://127.0.0.1:8002/ping
+```
+
+# cmd/363 http and gRPC
+```
+$ grpcurl -plaintext localhost:8003 proto.TagService.GetTagList
+
+$ curl http://127.0.0.1:8003/ping
+```
