@@ -45,3 +45,13 @@ $ grpcurl -plaintext localhost:8003 proto.TagService.GetTagList
 
 $ curl http://127.0.0.1:8003/ping
 ```
+
+# download annotations.proto
+```
+mkdir -p $GOPATH/src/google/api
+cd $GOPATH/src/google/api
+wget https://github.com/googleapis/googleapis/raw/master/google/api/annotations.proto
+
+protoc --proto_path=. --proto_path=$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --go_out=. --go-grpc_out=. --grpc-gateway_out=. ./proto/*.proto
+```
+
